@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=64G
 #SBATCH --partition=cpu
-#SBATCH --account=p307
+#SBATCH --account=YOUR_PROJECT_ID
 
 set -e
 echo "Job $SLURM_JOB_ID on $(hostname) | CPUs=$SLURM_CPUS_PER_TASK | start $(date)"

@@ -8,7 +8,7 @@
 cd ~/Desktop/qsar_model
 scp qsar_builder_v2.py qsar_visualize.py run_qsar_v2.slurm \
     CHEMBL279_pIC50_IC50.csv \
-    iq26ys1@front01.hpcf.cyi.ac.cy:~/SOFTWARE/AutoQSAR/qsar_model/
+    YOUR_USERNAME@HPC_LOGIN_NODE:~/SOFTWARE/AutoQSAR/qsar_model/
 ```
 
 ---
@@ -16,7 +16,7 @@ scp qsar_builder_v2.py qsar_visualize.py run_qsar_v2.slurm \
 ## المرحلة 2 — ادخل السيرفر وأرسل المهمة
 
 ```bash
-ssh iq26ys1@front01.hpcf.cyi.ac.cy
+ssh YOUR_USERNAME@HPC_LOGIN_NODE
 cd ~/SOFTWARE/AutoQSAR/qsar_model
 conda activate qsar_env
 sbatch run_qsar_v2.slurm
@@ -28,7 +28,7 @@ sbatch run_qsar_v2.slurm
 
 ```bash
 # كل 15-20 دقيقة:
-squeue -u iq26ys1 ; echo "---" ; tail -8 qsar_v2_*.out
+squeue -u YOUR_USERNAME ; echo "---" ; tail -8 qsar_v2_*.out
 ```
 
 **ترتيب المراحل الطبيعي:**
@@ -90,7 +90,7 @@ exit
 
 # من المحلي — نزّل كل شي:
 cd ~/Desktop/qsar_model
-scp -r iq26ys1@front01.hpcf.cyi.ac.cy:~/SOFTWARE/AutoQSAR/qsar_model/qsar_output_v2 ./qsar_output_v2
+scp -r YOUR_USERNAME@HPC_LOGIN_NODE:~/SOFTWARE/AutoQSAR/qsar_model/qsar_output_v2 ./qsar_output_v2
 ```
 
 ---
